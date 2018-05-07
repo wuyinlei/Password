@@ -1,29 +1,32 @@
-apply plugin: 'com.android.application'
-//第二步
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
-//kotlin扩展
 apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion 26
+
     defaultConfig {
-        applicationId "ruolan.com.password"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.android.support:design:26.1.0'
@@ -31,18 +34,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api project(':uselibrary')
-
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     //第三步
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-
     // Anko Commons
-    implementation 'org.jetbrains.anko:anko-commons:0.10.1'
-
+    implementation 'org.jetbrains.anko:anko-commons:0.10.5'
     // Support-v4 (only Anko Commons)
-    implementation 'org.jetbrains.anko:anko-support-v4-commons:0.10.1'
+    implementation 'org.jetbrains.anko:anko-support-v4-commons:0.10.5'
     //Retrofit
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
