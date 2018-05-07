@@ -5,7 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import ruolan.com.password.utils.EnterClass
-import ruolan.com.uselibrary.base.BaseActivity
+import ruolan.com.uselibrary.ui.activity.BaseActivity
 
 class MainActivity : BaseActivity() {
 

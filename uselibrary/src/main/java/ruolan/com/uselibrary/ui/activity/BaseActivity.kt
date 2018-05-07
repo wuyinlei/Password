@@ -1,4 +1,4 @@
-package ruolan.com.uselibrary.base
+package ruolan.com.uselibrary.ui.activity
 
 import android.os.Bundle
 import ruolan.com.uselibrary.common.AppManager

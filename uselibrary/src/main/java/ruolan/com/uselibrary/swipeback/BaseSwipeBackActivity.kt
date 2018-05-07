@@ -29,7 +29,7 @@ abstract class BaseSwipeBackActivity : AppCompatActivity(), SwipeBackActivityBas
 //    }
 
     override fun getSwipeBackLayout(): SwipeBackLayout {
-        return mHelper!!.swipeBackLayout
+        return mHelper!!.swipeBackLayout!!
     }
 
     override fun setSwipeBackEnable(enable: Boolean) {

@@ -37,12 +37,10 @@ dependencies {
     //第三步
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-
     // Anko Commons
-    implementation 'org.jetbrains.anko:anko-commons:0.10.1'
-
+    implementation 'org.jetbrains.anko:anko-commons:0.10.5'
     // Support-v4 (only Anko Commons)
-    implementation 'org.jetbrains.anko:anko-support-v4-commons:0.10.1'
+    implementation 'org.jetbrains.anko:anko-support-v4-commons:0.10.5'
     //Retrofit
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'

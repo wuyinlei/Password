@@ -2,7 +2,7 @@ package ruolan.com.password.utils
 
 import android.content.Context
 import org.jetbrains.anko.startActivity
-import ruolan.com.password.SecondActivity
+import ruolan.com.password.EditDetailActivity
 
 open class EnterClass{
 
@@ -10,7 +10,7 @@ open class EnterClass{
 
         /*跳转到下一个界面*/
         fun enterSecondActivity(context: Context){
-            context.startActivity<SecondActivity>()
+            context.startActivity<EditDetailActivity>()
         }
 
     }
