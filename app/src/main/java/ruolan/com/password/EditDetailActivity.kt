@@ -2,6 +2,8 @@ package ruolan.com.password
 
 import android.os.Bundle
 import org.jetbrains.anko.toast
+import ruolan.com.password.inject.component.DaggerEditComponent
+import ruolan.com.password.inject.module.EditModule
 import ruolan.com.password.model.PasswordModel
 import ruolan.com.password.mvp.presenter.EditDetailPresenter
 import ruolan.com.password.mvp.view.EditDetailView
@@ -15,11 +17,23 @@ class EditDetailActivity : BaseMvpActivity<EditDetailPresenter>(),EditDetailView
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_detail_layout)
 
-        mPresenter.mView = this
+        initInjection()
+
 
         val model = PasswordModel("123","hello",Date())
 
         mPresenter.onEditDetail(model)
+    }
+
+    private fun initInjection() {
+
+        DaggerEditComponent.builder()
+                .editModule(EditModule())
+                .build()
+                .inject(this)
+
+        mPresenter.mView = this
+
     }
 
     override fun onEditFailure() {

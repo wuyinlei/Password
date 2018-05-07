@@ -240,7 +240,7 @@ class SwipeBackLayout @JvmOverloads constructor(context: Context, attrs: Attribu
             mTrackingEdge = EDGE_BOTTOM
         }
 
-        mDragHelper.smoothSlideViewTo(mContentView, left, top)
+        mDragHelper.smoothSlideViewTo(mContentView!!, left, top)
         invalidate()
     }
 
@@ -361,7 +361,7 @@ class SwipeBackLayout @JvmOverloads constructor(context: Context, attrs: Attribu
             return mEdgeFlag and EDGE_BOTTOM
         }
 
-        override fun onViewPositionChanged(changedView: View, left: Int, top: Int, dx: Int, dy: Int) {
+        override fun onViewPositionChanged(changedView: View?, left: Int, top: Int, dx: Int, dy: Int) {
             super.onViewPositionChanged(changedView, left, top, dx, dy)
             if (mTrackingEdge and EDGE_LEFT != 0) {
                 mScrollPercent = Math.abs(left.toFloat() / mContentView!!.width)
@@ -392,9 +392,9 @@ class SwipeBackLayout @JvmOverloads constructor(context: Context, attrs: Attribu
             }
         }
 
-        override fun onViewReleased(releasedChild: View, xvel: Float, yvel: Float) {
-            val childWidth = releasedChild.width
-            val childHeight = releasedChild.height
+        override fun onViewReleased(releasedChild: View?, xvel: Float, yvel: Float) {
+            val childWidth = releasedChild!!.width
+            val childHeight = releasedChild!!.height
 
             var left = 0
             var top = 0
