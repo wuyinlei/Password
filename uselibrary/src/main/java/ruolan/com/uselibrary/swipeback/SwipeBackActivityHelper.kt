@@ -35,7 +35,7 @@ class SwipeBackActivityHelper(private val mActivity: Activity) {
 
     fun onActivityCreate() {
         mActivity.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        mActivity.window.decorView.setBackgroundDrawable(null)
+        mActivity.window.decorView.setBackground(null)
         swipeBackLayout = LayoutInflater.from(mActivity).inflate(R.layout.swipeback_layout, null) as SwipeBackLayout
         swipeBackLayout!!.addSwipeListener(object : SwipeBackLayout.SwipeListener {
             override fun onScrollStateChange(state: Int, scrollPercent: Float) {}

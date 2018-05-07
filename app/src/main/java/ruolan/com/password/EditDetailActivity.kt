@@ -15,12 +15,11 @@ class EditDetailActivity : BaseMvpActivity<EditDetailPresenter>(),EditDetailView
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_detail_layout)
 
-        val presenter = EditDetailPresenter(this)
-        presenter.mView = this
+        mPresenter.mView = this
 
         val model = PasswordModel("123","hello",Date())
-        presenter.onEditDetail(model)
 
+        mPresenter.onEditDetail(model)
     }
 
     override fun onEditFailure() {
