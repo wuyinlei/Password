@@ -1,4 +1,4 @@
-package ruolan.com.uselibrary.inject
+package ruolan.com.uselibrary.injection
 
 
 import java.lang.annotation.Retention

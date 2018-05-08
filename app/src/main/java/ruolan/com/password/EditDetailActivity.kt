@@ -29,6 +29,7 @@ class EditDetailActivity : BaseMvpActivity<EditDetailPresenter>(),EditDetailView
 
         DaggerEditComponent.builder()
                 .editModule(EditModule())
+                .activityComponent(activityComponent)
                 .build()
                 .inject(this)
 
