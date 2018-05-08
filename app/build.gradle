@@ -59,4 +59,8 @@ dependencies {
     //Dagger2
     implementation 'com.google.dagger:dagger:2.11'
     kapt 'com.google.dagger:dagger-compiler:2.11'
+
+    //RxLifecycle
+    implementation 'com.trello:rxlifecycle-kotlin:1.0'
+    implementation 'com.trello:rxlifecycle-components:1.0'
 }

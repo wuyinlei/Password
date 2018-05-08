@@ -7,6 +7,7 @@ import ruolan.com.uselibrary.injection.component.ActivityComponent
 import ruolan.com.uselibrary.injection.component.AppComponent
 import ruolan.com.uselibrary.injection.component.DaggerActivityComponent
 import ruolan.com.uselibrary.injection.module.ActivityModule
+import ruolan.com.uselibrary.injection.module.LifecycleProviderModule
 import ruolan.com.uselibrary.presenter.BasePresenter
 import ruolan.com.uselibrary.presenter.view.BaseView
 import javax.inject.Inject
@@ -45,6 +46,7 @@ abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView 
 
         activityComponent = DaggerActivityComponent.builder()
                 .activityModule(ActivityModule(this))
+                .lifecycleProviderModule(LifecycleProviderModule(this))
                 .appComponent((application as BaseApplication).appComponent)
                 .build()
     }

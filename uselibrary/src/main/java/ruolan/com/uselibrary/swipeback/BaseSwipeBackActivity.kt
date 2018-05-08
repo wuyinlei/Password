@@ -1,14 +1,13 @@
 package ruolan.com.uselibrary.swipeback
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.view.View
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity
 
 
 /**
  * Created by sll on 2015/9/10 0010.
  */
-abstract class BaseSwipeBackActivity : AppCompatActivity(), SwipeBackActivityBase {
+abstract class BaseSwipeBackActivity : RxAppCompatActivity(), SwipeBackActivityBase {
 
     private var mHelper: SwipeBackActivityHelper? = null
 
