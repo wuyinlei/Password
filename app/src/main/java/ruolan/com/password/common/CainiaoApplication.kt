@@ -1,4 +1,4 @@
-package ruolan.com.password
+package ruolan.com.password.common
 
 import android.util.Log
 import ruolan.com.uselibrary.common.BaseApplication

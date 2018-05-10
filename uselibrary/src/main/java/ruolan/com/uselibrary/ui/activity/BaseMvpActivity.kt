@@ -4,7 +4,6 @@ import android.os.Bundle
 import org.jetbrains.anko.toast
 import ruolan.com.uselibrary.common.BaseApplication
 import ruolan.com.uselibrary.injection.component.ActivityComponent
-import ruolan.com.uselibrary.injection.component.AppComponent
 import ruolan.com.uselibrary.injection.component.DaggerActivityComponent
 import ruolan.com.uselibrary.injection.module.ActivityModule
 import ruolan.com.uselibrary.injection.module.LifecycleProviderModule
@@ -39,8 +38,11 @@ abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView 
         super.onCreate(savedInstanceState)
 
         initActivityInject()
+        initComponent()
 
     }
+
+    abstract fun initComponent()
 
     private fun initActivityInject() {
 

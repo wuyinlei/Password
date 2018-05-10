@@ -11,5 +11,11 @@ open class BaseConstants {
         //手机号
         const val PHONE_NUM = "PHONE_NUMBER"
 
+        const val EDIT_MODEL = "EDIT_MODEL"
+
+        const val EDIT_REQUEST_CODE = 0X01
+
+        const val EDIT_RESULT_CODE = 0X02
+
     }
 }

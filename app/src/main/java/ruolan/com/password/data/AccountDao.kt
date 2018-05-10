@@ -11,7 +11,7 @@ interface AccountDao {
      * 查询所有的账户
      */
     @Query("SELECT * from account")
-    fun getAllAccounts():List<Account>
+    fun getAllAccounts():MutableList<Account>
 
     /**
      * 添加账户

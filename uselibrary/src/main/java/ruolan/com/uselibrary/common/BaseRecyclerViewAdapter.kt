@@ -11,6 +11,18 @@ abstract class BaseRecyclerViewAdapter<T, VH : RecyclerView.ViewHolder>
 
     var mDatas: MutableList<T> = mutableListOf()
 
+    fun setData(sources:MutableList<T>){
+        mDatas = sources
+        notifyDataSetChanged()
+    }
+
+
+    fun addData(source: T){
+        mDatas.add(source)
+        notifyDataSetChanged()
+    }
+
+
 
     override fun getItemCount(): Int {
         return mDatas.size

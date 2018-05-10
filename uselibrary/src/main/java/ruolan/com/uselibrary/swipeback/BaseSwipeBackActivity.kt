@@ -15,7 +15,15 @@ abstract class BaseSwipeBackActivity : RxAppCompatActivity(), SwipeBackActivityB
         super.onCreate(savedInstanceState)
         mHelper = SwipeBackActivityHelper(this)
         mHelper!!.onActivityCreate()
+
+        initView()
+
+        initData()
     }
+
+    abstract fun initData()
+
+    abstract fun initView()
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
