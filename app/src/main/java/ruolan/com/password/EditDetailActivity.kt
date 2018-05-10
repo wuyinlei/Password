@@ -4,7 +4,7 @@ import android.os.Bundle
 import org.jetbrains.anko.toast
 import ruolan.com.password.inject.component.DaggerEditComponent
 import ruolan.com.password.inject.module.EditModule
-import ruolan.com.password.model.PasswordModel
+import ruolan.com.password.data.model.AccountModel
 import ruolan.com.password.mvp.presenter.EditDetailPresenter
 import ruolan.com.password.mvp.view.EditDetailView
 import ruolan.com.uselibrary.ui.activity.BaseMvpActivity
@@ -19,8 +19,7 @@ class EditDetailActivity : BaseMvpActivity<EditDetailPresenter>(),EditDetailView
 
         initInjection()
 
-
-        val model = PasswordModel("123","hello",Date())
+        val model = AccountModel("123","hello",Date())
 
         mPresenter.onEditDetail(model)
     }

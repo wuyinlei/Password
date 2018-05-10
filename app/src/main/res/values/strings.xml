@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Password</string>
     <string name="action_settings">Settings</string>
+    <string name="edit_title">编辑界面</string>
+    <string name="input_account">请输入账号(邮箱、网名、手机号)</string>
+    <string name="input_password">请输入密码，密码保存的时候已经经过加密</string>
+    <string name="input_type">请输入该账号绑定的app名字</string>
+    <string name="input_phone">请输入注册时候的手机号</string>
+    <string name="account">用户名：</string>
+    <string name="type">类  \t  型:</string>
+    <string name="phone">手机号：</string>
+    <string name="password">密  \t  码</string>
+    <string name="edit_save">点击保存</string>
 </resources>

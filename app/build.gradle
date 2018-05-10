@@ -33,13 +33,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     api project(':uselibrary')
-
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     //第三步
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
     // Anko Commons
     implementation 'org.jetbrains.anko:anko-commons:0.10.5'
     // Support-v4 (only Anko Commons)
@@ -55,12 +52,15 @@ dependencies {
     implementation 'io.reactivex:rxandroid:1.2.1'
     //Glide
     implementation 'com.github.bumptech.glide:glide:3.8.0'
-
     //Dagger2
     implementation 'com.google.dagger:dagger:2.11'
     kapt 'com.google.dagger:dagger-compiler:2.11'
-
     //RxLifecycle
     implementation 'com.trello:rxlifecycle-kotlin:1.0'
     implementation 'com.trello:rxlifecycle-components:1.0'
+    //room数据库   roomVersion = "1.0.0"
+    //    implementation 'com.google.guava:guava:22.0'？
+    implementation "android.arch.persistence.room:runtime:1.1.0"
+    kapt "android.arch.persistence.room:compiler:1.1.0"
+    implementation 'com.google.guava:guava:25.0-jre'
 }

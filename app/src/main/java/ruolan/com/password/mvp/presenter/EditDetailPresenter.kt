@@ -1,6 +1,6 @@
 package ruolan.com.password.mvp.presenter
 
-import ruolan.com.password.model.PasswordModel
+import ruolan.com.password.data.model.AccountModel
 import ruolan.com.password.mvp.view.EditDetailView
 import ruolan.com.password.service.impl.EditServiceImpl
 import ruolan.com.uselibrary.presenter.BasePresenter
@@ -11,7 +11,7 @@ open class EditDetailPresenter @Inject constructor(): BasePresenter<EditDetailVi
     @Inject
     lateinit var service: EditServiceImpl
 
-    fun onEditDetail(model:PasswordModel){
+    fun onEditDetail(model:AccountModel){
 
         mView.showLoading()
 
