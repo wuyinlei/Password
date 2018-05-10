@@ -11,4 +11,9 @@
     <string name="phone">手机号：</string>
     <string name="password">密  \t  码</string>
     <string name="edit_save">点击保存</string>
+    <string name="type_tip">APP\网站:</string>
+    <string name="phone_type">手\t 机\t 号:</string>
+    <string name="account_tip">用户账号:</string>
+    <string name="password_tip">密码级别:</string>
+    <string name="tv_copy">复制</string>
 </resources>
