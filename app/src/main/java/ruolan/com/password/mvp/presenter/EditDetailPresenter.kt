@@ -1,9 +1,12 @@
 package ruolan.com.password.mvp.presenter
 
+import android.os.Handler
 import com.google.common.base.Strings
+import ruolan.com.password.data.AccountDatabase
 import ruolan.com.password.data.model.AccountModel
 import ruolan.com.password.mvp.view.EditDetailView
 import ruolan.com.password.service.impl.EditServiceImpl
+import ruolan.com.password.utils.DbWorkThread
 import ruolan.com.uselibrary.presenter.BasePresenter
 import ruolan.com.uselibrary.utils.CheckStrength
 import javax.inject.Inject
@@ -13,15 +16,17 @@ open class EditDetailPresenter @Inject constructor() : BasePresenter<EditDetailV
     @Inject
     lateinit var service: EditServiceImpl
 
-    fun onEditDetail(model: AccountModel) {
+    fun onEditDetail(model: AccountModel, dbWorkThread: DbWorkThread, accountDatabase: AccountDatabase, mUiHandler: Handler) {
 
         checkValue(model)
 
-        mView.showLoading()
-
         //执行逻辑
-        service.saveToLocal(model)
+        service.saveToLocal(model,mView,dbWorkThread,accountDatabase,mUiHandler)
 
+    }
+
+    fun clear(){
+        service.clear()
     }
 
     private fun checkValue(model: AccountModel): Boolean {
@@ -56,7 +61,7 @@ open class EditDetailPresenter @Inject constructor() : BasePresenter<EditDetailV
     private fun checkPasswordLevel(password: String): Int {
         if (Strings.isNullOrEmpty(password)) {
             mView.passwordError("密码不能为空")
-            return -1;
+            return -1
         }
         return CheckStrength.checkPasswordStrength(password)
     }

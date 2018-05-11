@@ -35,6 +35,8 @@ class MainActivity : BaseActivity() {
             EnterClass.enterSecondActivity(this)
         }
 
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -48,6 +50,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initData() {
+        mDbWorkerThread = DbWorkThread("dbWorkerThread")
+        mDbWorkerThread.start()
         loaderLocalData()
     }
 
@@ -56,11 +60,14 @@ class MainActivity : BaseActivity() {
     }
 
     private fun loaderLocalData() {
+
+        accountDatabase = AccountDatabase.getInstance(this)
+
         val task = Runnable {
             val accountData =
                     accountDatabase?.accountDao()?.getAllAccounts()
             mUiHandler.post({
-                if (accountData == null || accountData?.size == 0) {
+                if (accountData == null || accountData.size == 0) {
                     toast("No data in cache..!!")
                 } else {
                     bindDataWithUi(accountData)
@@ -72,9 +79,9 @@ class MainActivity : BaseActivity() {
 
     private fun bindDataWithUi(account: MutableList<Account>?) {
         if (account?.size!! > 0) {
+            main_recycler_view.layoutManager = LinearLayoutManager(this)
             mMainAdapter = MainAdapter(this)
             mMainAdapter.setData(account)
-            main_recycler_view.layoutManager = LinearLayoutManager(this)
             main_recycler_view.adapter = mMainAdapter
         }
 
@@ -93,5 +100,11 @@ class MainActivity : BaseActivity() {
             true
         } else super.onOptionsItemSelected(item)
 
+    }
+
+    override fun onDestroy() {
+        AccountDatabase.destoryInstance()
+        mDbWorkerThread.quit()
+        super.onDestroy()
     }
 }
