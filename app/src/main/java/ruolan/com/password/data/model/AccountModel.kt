@@ -1,9 +1,9 @@
 package ruolan.com.password.data.model
 
 
-class AccountModel(var password: String,
-                   var account: String,
-                   var date: Long,
+class AccountModel(var account: String,
+                   var password: String,
                    var phone: String,
                    var type: String,
+                   var date: Long,
                    var stars: Int) : BaseEntity()

@@ -1,8 +1,10 @@
 package ruolan.com.password.ui.activity
 
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_edit_detail_layout.*
 import org.jetbrains.anko.toast
 import ruolan.com.password.R
+import ruolan.com.password.data.model.AccountModel
 import ruolan.com.password.inject.component.DaggerEditComponent
 import ruolan.com.password.inject.module.EditModule
 import ruolan.com.password.mvp.presenter.EditDetailPresenter
@@ -16,7 +18,6 @@ class EditDetailActivity : BaseMvpActivity<EditDetailPresenter>(), EditDetailVie
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_detail_layout)
 
-
     }
 
 
@@ -29,13 +30,22 @@ class EditDetailActivity : BaseMvpActivity<EditDetailPresenter>(), EditDetailVie
 
         mPresenter.mView = this
 
-
     }
 
     override fun initView() {
+
     }
 
     override fun initData() {
+        var acount = edit_account.text.toString().trim()
+        var phone = edit_phone.text.toString().trim()
+        var password = edit_phone.text.toString().trim()
+        var type = edit_type.text.toString().trim()
+
+        var accout = AccountModel(acount, password, phone, type, System.currentTimeMillis(), 0)
+
+        mPresenter.onEditDetail(accout)
+
     }
 
 
@@ -44,7 +54,6 @@ class EditDetailActivity : BaseMvpActivity<EditDetailPresenter>(), EditDetailVie
     }
 
     override fun onEditSucc() {
-        toast("成功的回调")
-//        Log.d("ruolan","成功了")
+
     }
 }

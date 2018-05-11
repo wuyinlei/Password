@@ -1,7 +1,9 @@
 package ruolan.com.password.service
 
+import ruolan.com.password.data.model.AccountModel
+
 interface EditService {
 
-    fun submitPassword(username: String, password: String, phoneNum: String)
+    fun saveToLocal(accountModel: AccountModel)
 
 }

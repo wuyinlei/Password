@@ -106,6 +106,7 @@
             android:rating="3"
             android:theme="@style/RatingBar_CustomColor"/>
 
+
         <ImageView
             android:id="@+id/iv_copy"
             android:layout_width="45dp"

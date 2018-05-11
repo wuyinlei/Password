@@ -5,14 +5,16 @@ import ruolan.com.uselibrary.presenter.view.BaseView
 interface EditDetailView :BaseView{
 
     /**
-     * 编辑成功
+     * 编辑回调
      */
-    fun onEditSucc()
+    fun onEditBack(boolean: Boolean)
 
-    /**
-     * 编辑失败
-     */
-    fun onEditFailure()
+
+    fun passwordError(string: String)
+
+    fun accountError(string: String)
+
+    fun phoneError(string: String)
 
 
 

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.account_item_layout.view.*
 import ruolan.com.password.R
 import ruolan.com.password.data.Account
-import ruolan.com.password.data.model.AccountModel
 import ruolan.com.uselibrary.common.BaseRecyclerViewAdapter
 
 class MainAdapter(context: Context) : BaseRecyclerViewAdapter<Account, MainAdapter.MainHolder>(context) {

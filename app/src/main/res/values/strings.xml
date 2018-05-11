@@ -16,4 +16,5 @@
     <string name="account_tip">用户账号:</string>
     <string name="password_tip">密码级别:</string>
     <string name="tv_copy">复制</string>
+    <string name="tv_click">点击</string>
 </resources>

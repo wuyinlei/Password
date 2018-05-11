@@ -17,7 +17,7 @@ interface AccountDao {
      * 添加账户
      */
     @Insert(onConflict = REPLACE)
-    fun insertAccount(account: Account):Int
+    fun insertAccount(account: Account)
 
 
     /**
